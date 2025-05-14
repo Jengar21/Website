@@ -183,6 +183,61 @@ button {
     max-width: 250px;
 }
 
+.contact-container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    color: wheat;
+    font-size: 18px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #FFFFF0;
+    opacity: .7;
+    color: #2e1c0f;
+}
+
+form button {
+    background-color: #7c5b40;
+    color: #FFFFF0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #5a3e2d;
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    display: block;
+    margin: 10px 0;
+    color: #7c5b40;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
 /* Mobile-specific styles */
 @media (max-width: 768px) {
     body {
