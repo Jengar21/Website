@@ -177,3 +177,55 @@ button {
     cursor: pointer;
     width: auto;
 }
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .header-left {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .header-center {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
