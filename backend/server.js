@@ -18,12 +18,12 @@ app.post('/send-message', async (req, res) => {
         return res.status(400).json({ error: 'All fields are required.' });
     }
 
-    // Configure Nodemailer
+    require('dotenv').config(); // Load environment variables
     const transporter = nodemailer.createTransport({
-        service: 'gmail', // Use your email provider
+        service: 'gmail',
         auth: {
-            user: 'arisjennifer21@gmail.com', 
-            pass: '11211Manhattan@', 
+            user: process.env.EMAIL, // Use the EMAIL environment variable
+            pass: process.env.EMAIL_PASSWORD, // Use the EMAIL_PASSWORD environment variable
         },
     });
 
