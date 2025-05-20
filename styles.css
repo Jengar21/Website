@@ -104,22 +104,6 @@ nav a {
     opacity: 0.8;
 }
 
-.project-description {
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 10px;
-    background: rgba(30, 30, 30, 0.95);
-    color: #fff;
-    padding: 12px;
-    border-radius: 8px;
-    z-index: 10;
-    font-size: 0.95em;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    pointer-events: none;
-}
-
 .project-card:hover .project-description {
     display: block;
 }
@@ -130,6 +114,38 @@ nav a {
 
 .project-card p {
     margin: 0;
+}
+
+.project-image {
+    position: relative;
+    display: block;
+}
+
+.project-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30, 30, 30, 0.85);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 2;
+    font-size: 1em;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-image:hover .project-description,
+.project-image:focus-within .project-description {
+    opacity: 1;
+}
+
+/* Remove or override this if present: */
+.project-card:hover .project-description {
+    display: block;
 }
 
 footer {
