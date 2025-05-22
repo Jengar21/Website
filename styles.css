@@ -340,6 +340,14 @@ form button:hover {
     text-decoration: underline;
 }
 
+@media (min-width: 769px) {
+    .project-image:hover .project-description,
+    .project-image:focus-within .project-description {
+        opacity: 1;
+        display: flex;
+    }
+}
+
 /* Mobile-specific styles */
 @media (max-width: 768px) {
     body {
@@ -393,8 +401,7 @@ form button:hover {
     }
 
     .project-description {
-        font-size: 9px;
-        display: none;
+         display: none;
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
         background: rgba(30, 30, 30, 0.85);
@@ -404,8 +411,14 @@ form button:hover {
         z-index: 2;
         align-items: center;
         justify-content: center;
-        pointer-events: auto;
+        font-size: 9px;
         opacity: 1;
+        pointer-events: auto; /* allow interaction */
+    }
+
+    .project-description.mobile-active {
+        display: flex !important;
+        opacity: 1 !important;
     }
 
     button {

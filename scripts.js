@@ -1,6 +1,6 @@
 function toggleDescriptionByTitle(e) {
      if (window.innerWidth <= 768) {
-        e.stopPropagation(); // Prevent bubbling up, but only for the title
+        e.stopPropagation(); 
         const projectCard = this.closest('.project-card');
         if (projectCard) {
             document.querySelectorAll('.project-description.mobile-active').forEach(desc => {
