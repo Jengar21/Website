@@ -1,5 +1,6 @@
 function toggleDescriptionByTitle() {
-    if (window.innerWidth <= 768) {
+     if (window.innerWidth <= 768) {
+        e.stopPropagation(); // Prevent bubbling up, but only for the title
         const projectCard = this.closest('.project-card');
         if (projectCard) {
             document.querySelectorAll('.project-description.mobile-active').forEach(desc => {
@@ -21,13 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         title.addEventListener('click', toggleDescriptionByTitle);
     });
 
-    const links = document.querySelectorAll('.project-card a');
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    });
-
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -45,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('resize', function() {
     const projectTitles = document.querySelectorAll('.project-title-mobile');
     projectTitles.forEach(title => {
-        // Re-attach listeners on resize to handle mobile/desktop transition
         title.removeEventListener('click', toggleDescriptionByTitle);
         title.addEventListener('click', toggleDescriptionByTitle);
     });
