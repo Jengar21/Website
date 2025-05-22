@@ -1,7 +1,6 @@
 function setupMobileCardClicks() {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
-        // Remove any existing mobile click listeners to avoid duplicates
         card.removeEventListener('click', toggleDescription);
 
         if (window.innerWidth <= 768) {
@@ -12,6 +11,7 @@ function setupMobileCardClicks() {
 
 function toggleDescription() {
     const description = this.querySelector('.project-description');
+    console.log("Toggling description:", description);
     if (description) {
         description.classList.toggle('mobile-active');
     }
