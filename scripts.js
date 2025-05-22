@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
-        card.addEventListener('click', function() {
-            
-            const projectId = this.getAttribute('data-id');
-            window.location.href = `projects.html?id=${projectId}`;
-        });
+        const indicator = card.querySelector('.mobile-indicator');
+        const description = card.querySelector('.project-description');
+
+        if (indicator && description) {
+            indicator.addEventListener('click', function() {
+                description.classList.toggle('mobile-active');
+            });
+        }
     });
 
     const links = document.querySelectorAll('.project-card a');
