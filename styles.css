@@ -144,18 +144,9 @@ nav a {
     border-radius: 5px;
     z-index: 2;
     font-size: 20px;
-    pointer-events: none;
+    pointer-events: auto;
     opacity: 0;
     transition: opacity 0.3s;
-}
-
-.project-image:hover .project-description,
-.project-image:focus-within .project-description {
-    opacity: 1;
-}
-
-.project-card:hover .project-description {
-    display: block;
 }
 
 footer {
@@ -413,7 +404,7 @@ form button:hover {
         justify-content: center;
         font-size: 9px;
         opacity: 1;
-        pointer-events: auto; /* allow interaction */
+        pointer-events: auto;
     }
 
     .project-description.mobile-active {
