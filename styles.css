@@ -386,35 +386,16 @@ form button:hover {
 
     .project-description {
         font-size: 9px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(30, 30, 30, 0.85);
-        color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        z-index: 2;
         display: none;
-        opacity: 0;
-        transition: none;
-        pointer-events: none;
-        align-items: center;
-        justify-content: center;
+        position: static;
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .project-description.mobile-active {
         display: flex !important; 
         opacity: 1 !important;
-        pointer-events: auto !important; 
     }
-
-    .project-card:hover .project-description {
-        display: none !important; 
-        opacity: 0 !important;
-    }
-
 
     button {
         width: 100%;
