@@ -1,15 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
+function setupMobileCardClicks() {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
+        // Remove any existing mobile click listeners to avoid duplicates
+        card.removeEventListener('click', toggleDescription);
+
         if (window.innerWidth <= 768) {
-            card.addEventListener('click', function() {
-                const description = this.querySelector('.project-description');
-                if (description) {
-                    description.classList.toggle('mobile-active');
-                }
-            });
+            card.addEventListener('click', toggleDescription);
         }
     });
+}
+
+function toggleDescription() {
+    const description = this.querySelector('.project-description');
+    if (description) {
+        description.classList.toggle('mobile-active');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setupMobileCardClicks();
 
     const links = document.querySelectorAll('.project-card a');
     links.forEach(link => {
@@ -32,21 +41,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-window.addEventListener('resize', function() {
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        // Remove any existing click listeners
-        const clonedCard = card.cloneNode(true);
-        card.parentNode.replaceChild(clonedCard, card);
-
-        // Re-add click listener for mobile
-        if (window.innerWidth <= 768) {
-            clonedCard.addEventListener('click', function() {
-                const description = this.querySelector('.project-description');
-                if (description) {
-                    description.classList.toggle('mobile-active');
-                }
-            });
-        }
-    });
-});
+window.addEventListener('resize', setupMobileCardClicks);
