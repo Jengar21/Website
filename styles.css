@@ -388,7 +388,12 @@ form button:hover {
     }
 
     .project-title-mobile {
-        font-size: 1.1em;
+        display: block;
+        width: auto;
+        margin: 0;
+        padding: 0.2em 0;
+        z-index: 2;
+        position: relative;
     }
 
     .project-description {
