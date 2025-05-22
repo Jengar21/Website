@@ -381,7 +381,29 @@ form button:hover {
     }
 
     .project-description {
-        font-size: 9px;
+        font-size: 16px; /* Adjust font size for mobile if needed */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(30, 30, 30, 0.85);
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 2;
+        display: none; /* Initially hidden on mobile */
+        opacity: 0;
+        transition: none; /* Remove transition on mobile toggle */
+        pointer-events: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-description.mobile-active {
+        display: flex !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
     }
 
     .mobile-indicator {
@@ -394,12 +416,12 @@ form button:hover {
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer;
-        z-index: 3; 
-        display: block; 
+        z-index: 3;
+        display: block;
     }
 
     .project-card:hover .project-description {
-        display: none !important; 
+        display: none !important; /* Crucial to disable hover on mobile */
         opacity: 0 !important;
     }
 
@@ -417,5 +439,5 @@ form button:hover {
 }
 
 .mobile-indicator {
-    display: none;
+    display: none; /* Initially hidden on desktop */
 }
