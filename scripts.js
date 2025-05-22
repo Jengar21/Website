@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
-        const description = card.querySelector('.project-description');
-
-        if (window.innerWidth <= 768 && description) {
+        if (window.innerWidth <= 768) {
             card.addEventListener('click', function() {
-                description.classList.toggle('mobile-active');
+                const description = this.querySelector('.project-description');
+                if (description) {
+                    description.classList.toggle('mobile-active');
+                }
             });
         }
     });
@@ -13,17 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('.project-card a');
     links.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.stopPropagation(); 
+            e.stopPropagation();
         });
     });
 
-   
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             if (targetId.startsWith('#')) {
-                e.preventDefault(); 
+                e.preventDefault();
                 document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -35,16 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('resize', function() {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
-        const description = card.querySelector('.project-description');
-        // Remove any existing click listeners and re-add if on mobile
+        // Remove any existing click listeners
         const clonedCard = card.cloneNode(true);
         card.parentNode.replaceChild(clonedCard, card);
 
-        if (window.innerWidth <= 768 && description) {
+        // Re-add click listener for mobile
+        if (window.innerWidth <= 768) {
             clonedCard.addEventListener('click', function() {
-                const desc = this.querySelector('.project-description');
-                if (desc) {
-                    desc.classList.toggle('mobile-active');
+                const description = this.querySelector('.project-description');
+                if (description) {
+                    description.classList.toggle('mobile-active');
                 }
             });
         }
