@@ -1,31 +1,20 @@
-function setupMobileCardClicks() {
-   const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        if (window.innerWidth <= 768) {
-            // Remove any existing listener first
-            card.removeEventListener('click', toggleDescription);
-            card.addEventListener('click', toggleDescription);
-        } else {
-            // Optionally, remove the listener if we go back to desktop size
-            card.removeEventListener('click', toggleDescription);
-            const description = card.querySelector('.project-description');
-            if (description && description.classList.contains('mobile-active')) {
-                description.classList.remove('mobile-active');
+function toggleDescriptionByTitle() {
+    if (window.innerWidth <= 768) {
+        const projectCard = this.closest('.project-card');
+        if (projectCard) {
+            const description = projectCard.querySelector('.project-description');
+            if (description) {
+                description.classList.toggle('mobile-active');
             }
         }
-    });
-}
-
-function toggleDescription() {
-    const description = this.querySelector('.project-description');
-    console.log("Toggling description:", description);
-    if (description) {
-        description.classList.toggle('mobile-active');
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    setupMobileCardClicks();
+    const projectTitles = document.querySelectorAll('.project-title-mobile');
+    projectTitles.forEach(title => {
+        title.addEventListener('click', toggleDescriptionByTitle);
+    });
 
     const links = document.querySelectorAll('.project-card a');
     links.forEach(link => {
@@ -48,4 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-window.addEventListener('resize', setupMobileCardClicks);
+window.addEventListener('resize', function() {
+    const projectTitles = document.querySelectorAll('.project-title-mobile');
+    projectTitles.forEach(title => {
+        // Re-attach listeners on resize to handle mobile/desktop transition
+        title.removeEventListener('click', toggleDescriptionByTitle);
+        title.addEventListener('click', toggleDescriptionByTitle);
+    });
+});

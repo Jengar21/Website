@@ -401,9 +401,9 @@ form button:hover {
     }
 
     .project-description.mobile-active {
-        display: flex !important;
+        display: flex !important; 
         opacity: 1 !important;
-        pointer-events: auto !important;
+        pointer-events: auto !important; 
     }
 
     .project-card:hover .project-description {
