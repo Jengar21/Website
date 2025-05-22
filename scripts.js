@@ -3,6 +3,7 @@ function toggleDescriptionByTitle() {
         const projectCard = this.closest('.project-card');
         if (projectCard) {
             const description = projectCard.querySelector('.project-description');
+            console.log("Toggling description:", description);
             if (description) {
                 description.classList.toggle('mobile-active');
             }
