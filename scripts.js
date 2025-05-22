@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
-        const indicator = card.querySelector('.mobile-indicator');
         const description = card.querySelector('.project-description');
 
-        if (indicator && description) {
-            indicator.addEventListener('click', function() {
+        if (window.innerWidth <= 768 && description) {
+            card.addEventListener('click', function() {
                 description.classList.toggle('mobile-active');
             });
         }
@@ -33,3 +32,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+window.addEventListener('resize', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        const description = card.querySelector('.project-description');
+        // Remove any existing click listeners and re-add if on mobile
+        const clonedCard = card.cloneNode(true);
+        card.parentNode.replaceChild(clonedCard, card);
+
+        if (window.innerWidth <= 768 && description) {
+            clonedCard.addEventListener('click', function() {
+                const desc = this.querySelector('.project-description');
+                if (desc) {
+                    desc.classList.toggle('mobile-active');
+                }
+            });
+        }
+    });
+});
