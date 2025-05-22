@@ -380,6 +380,10 @@ form button:hover {
         gap: 15px;
     }
 
+    .project-description {
+        font-size: 16px;
+    }
+
     button {
         width: 100%;
         font-size: 14px;
