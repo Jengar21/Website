@@ -115,6 +115,23 @@ nav a {
     opacity: 0.8;
 }
 
+.project-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30, 30, 30, 0.85);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 2;
+    font-size: 20px;
+    pointer-events: auto;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
 .project-card:hover .project-description {
     display: block;
 }
@@ -132,22 +149,6 @@ nav a {
     display: block;
 }
 
-.project-description {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(30, 30, 30, 0.85);
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    z-index: 2;
-    font-size: 20px;
-    pointer-events: auto;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
 
 footer {
     text-align: center;
@@ -397,9 +398,8 @@ form button:hover {
     }
 
     .project-description {
-         display: none;
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
+        display: none;
+        position: static;
         background: rgba(30, 30, 30, 0.85);
         color: #fff;
         padding: 20px;
@@ -410,6 +410,7 @@ form button:hover {
         font-size: 9px;
         opacity: 1;
         pointer-events: auto;
+        margin-top: 10px; 
     }
 
     .project-description.mobile-active {
