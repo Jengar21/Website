@@ -1,10 +1,17 @@
 function setupMobileCardClicks() {
-    const projectCards = document.querySelectorAll('.project-card');
+   const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
-        card.removeEventListener('click', toggleDescription);
-
         if (window.innerWidth <= 768) {
+            // Remove any existing listener first
+            card.removeEventListener('click', toggleDescription);
             card.addEventListener('click', toggleDescription);
+        } else {
+            // Optionally, remove the listener if we go back to desktop size
+            card.removeEventListener('click', toggleDescription);
+            const description = card.querySelector('.project-description');
+            if (description && description.classList.contains('mobile-active')) {
+                description.classList.remove('mobile-active');
+            }
         }
     });
 }
