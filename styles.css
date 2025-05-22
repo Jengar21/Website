@@ -380,6 +380,10 @@ form button:hover {
         gap: 15px;
     }
 
+    .project-title-mobile {
+        font-size: 1.1em;
+    }
+
     .project-description {
         font-size: 9px;
         position: absolute;
