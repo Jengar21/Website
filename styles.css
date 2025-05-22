@@ -408,11 +408,6 @@ form button:hover {
         opacity: 1;
     }
 
-    .project-description.mobile-active {
-        display: flex !important; 
-        opacity: 1 !important;
-    }
-
     button {
         width: 100%;
         font-size: 14px;
