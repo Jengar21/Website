@@ -383,16 +383,12 @@ form button:hover {
     .project-description {
         font-size: 16px;
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         background: rgba(30, 30, 30, 0.85);
         color: #fff;
         padding: 20px;
         border-radius: 5px;
         z-index: 2;
-        display: none; /* Initially hidden on mobile */
+        display: none; 
         opacity: 0;
         transition: none;
         pointer-events: none;
