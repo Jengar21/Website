@@ -2,8 +2,12 @@ function toggleDescriptionByTitle() {
     if (window.innerWidth <= 768) {
         const projectCard = this.closest('.project-card');
         if (projectCard) {
+            document.querySelectorAll('.project-description.mobile-active').forEach(desc => {
+                if (!projectCard.contains(desc)) {
+                    desc.classList.remove('mobile-active');
+                }
+            });
             const description = projectCard.querySelector('.project-description');
-            console.log("Toggling description:", description);
             if (description) {
                 description.classList.toggle('mobile-active');
             }

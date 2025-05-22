@@ -387,9 +387,17 @@ form button:hover {
     .project-description {
         font-size: 9px;
         display: none;
-        position: static;
-        opacity: 1;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(30, 30, 30, 0.85);
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
         pointer-events: auto;
+        opacity: 1;
     }
 
     .project-description.mobile-active {
