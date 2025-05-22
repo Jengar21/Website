@@ -16,7 +16,7 @@ main{
 
 .content {
     display: flex; 
-    justify-content: space-between; 
+    justify-content: space-around; 
     align-items: center; 
     margin: 20px auto; 
     width: 80%; 
@@ -76,12 +76,23 @@ nav a {
 }
 
 .text {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    margin: 20px auto; 
-    width: 80%; 
-    color: black;
+    flex: .75;
+    margin-left: 20px;
+    color: #F5F5DC;
+    font-size: 20px;
+}
+
+.text p1 {
+    display: block;
+    font-size: 55px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text p2 {
+    display: block;
+    font-size: 30px;
+    margin: 20px 0;
 }
 
 .project-container {
@@ -143,7 +154,6 @@ nav a {
     opacity: 1;
 }
 
-/* Remove or override this if present: */
 .project-card:hover .project-description {
     display: block;
 }
@@ -159,12 +169,6 @@ footer {
 
 }
 
-.text {
-    flex: .75;
-    margin-left: 20px;
-    color: #F5F5DC;
-    font-size: 20px;
-}
 
 main h1 {
     text-align: center;
@@ -200,11 +204,10 @@ image {
 
 .highlight {
     font-weight: bold; 
-    font-size: 22px;
     color: #7c5b40; 
 }
 
-button {
+.button {
     background-color: #FFFFF0;
     color: #7c5b40;
     border-radius: 5px;
@@ -214,9 +217,72 @@ button {
     display: block;
     font-size: 16px;
     font-weight: bold; 
-    margin: 40px auto;
+    margin: 40px auto 0 auto;
     cursor: pointer;
     max-width: 250px;
+}
+
+.section-divider {
+    border: none;
+    border-top: 3px solid #FFFFF0; /* matches header */
+    margin: 40px auto 30px auto;
+    width: 80%;
+    opacity: 0.8;
+}
+
+.about-me {
+    width: 80%;
+    margin: 0 auto 40px auto;
+    background: #2e1c0f; 
+    border-radius: 8px;
+    padding: 30px 24px;
+    color: #F5F5DC;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+
+.about-split {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.text-about, .skills-about {
+    flex: 1 1 0;
+    min-width: 220px;
+}
+
+.text-about h1 {
+    margin-top: 0;
+    color: #FFFFF0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.text-about p {
+    color: #FFFFF0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.skills-about h1 {
+     margin-top: 0;
+    color: #FFFFF0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.skills-about p {
+    color: #FFFFF0;
+    font-size: 20px;
+}
+
+.skills-about li {
+    margin-bottom: 10px;
 }
 
 .contact-container {
