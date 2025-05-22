@@ -413,11 +413,6 @@ form button:hover {
         opacity: 1 !important;
     }
 
-    .project-image:hover .project-description,
-    .project-image:focus-within .project-description {
-        opacity: 1;
-    }
-
     button {
         width: 100%;
         font-size: 14px;
