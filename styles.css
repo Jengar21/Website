@@ -381,7 +381,7 @@ form button:hover {
     }
 
     .project-description {
-        font-size: auto;
+        font-size: 10px;
     }
 
     button {
