@@ -381,7 +381,7 @@ form button:hover {
     }
 
     .project-description {
-        font-size: 16px;
+        font-size: 9px;
         position: absolute;
         background: rgba(30, 30, 30, 0.85);
         color: #fff;
