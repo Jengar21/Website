@@ -278,11 +278,31 @@ image {
 }
 
 .contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    color: wheat;
-    font-size: 18px;
+    margin: 40px auto;
+    background: #2e1c0f;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 40px 20px;
+    gap: 40px;
+    color: #F5F5DC;
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contact-left {
+    padding-right: 30px;
+}
+
+.contact-right {
+    padding-left: 30px;
 }
 
 form {
@@ -321,10 +341,11 @@ form button:hover {
 
 .social-links a {
     display: block;
-    margin: 10px 0;
+    margin: 20px 0;
     color: #7c5b40;
     font-size: 20px;
     text-decoration: none;
+    text-align: center;
 
 }
 
